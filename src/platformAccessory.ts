@@ -46,7 +46,7 @@ export class RecirculationPump {
   }
 
   async setPumpToOn(value: CharacteristicValue) {
-    this.platform.log.debug('Setting pump to on');
+    this.platform.log.debug(`Setting pump to ${value}`);
 
     // Fake reaching out to the pump
     await setTimeout(1000, () => {

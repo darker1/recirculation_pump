@@ -59,27 +59,27 @@ export class KyleHomebridgePlatform implements DynamicPlatformPlugin {
       {
         UniqueId: 'recirculation-pump-001',
         DisplayName: 'Recirculation Pump',
-      }
+      };
 
-      const uuid = this.api.hap.uuid.generate(device.UniqueId);
-      const existingAccessory = this.accessories.get(uuid);
+    const uuid = this.api.hap.uuid.generate(device.UniqueId);
+    const existingAccessory = this.accessories.get(uuid);
 
-      if (existingAccessory) {
-        this.log.info('Restoring existing accessory from cache:', existingAccessory.displayName);
+    if (existingAccessory) {
+      this.log.info('Restoring existing accessory from cache:', existingAccessory.displayName);
 
-        new RecirculationPump(this, existingAccessory);
-      } else {
-        this.log.info('Adding new accessory:', device.DisplayName);
+      new RecirculationPump(this, existingAccessory);
+    } else {
+      this.log.info('Adding new accessory:', device.DisplayName);
 
-        const accessory = new this.api.platformAccessory(device.DisplayName, uuid);
-        accessory.context.device = device;
+      const accessory = new this.api.platformAccessory(device.DisplayName, uuid);
+      accessory.context.device = device;
 
-        new RecirculationPump(this, accessory);
+      new RecirculationPump(this, accessory);
 
-        this.api.registerPlatformAccessories(PLUGIN_NAME, PLATFORM_NAME, [accessory]);
-      }
+      this.api.registerPlatformAccessories(PLUGIN_NAME, PLATFORM_NAME, [accessory]);
+    }
 
-      this.discoveredCacheUUIDs.push(uuid);
+    this.discoveredCacheUUIDs.push(uuid);
 
     // you can also deal with accessories from the cache which are no longer present by removing them from Homebridge
     // for example, if your plugin logs into a cloud account to retrieve a device list, and a user has previously removed a device
