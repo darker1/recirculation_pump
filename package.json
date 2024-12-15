@@ -3,7 +3,6 @@
   "displayName": "Recirculation Pump",
   "type": "module",
   "version": "1.0.0",
-  "private": true,
   "description": "Triggers on the recirculation pump to circulate hot water.",
   "author": "Kyle Wall",
   "license": "Apache-2.0",
