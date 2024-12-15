@@ -1,11 +1,11 @@
 {
-  "name": "homebridge-plugin-name",
-  "displayName": "Plugin Name",
+  "name": "homebridge-recirculation-pump",
+  "displayName": "Recirculation Pump",
   "type": "module",
   "version": "1.0.0",
   "private": true,
-  "description": "A short description about what your plugin does.",
-  "author": "Your Name",
+  "description": "Triggers on the recirculation pump to circulate hot water.",
+  "author": "Kyle Wall",
   "license": "Apache-2.0",
   "homepage": "https://github.com/USERNAME/GITHUB_PROJECT_NAME#readme",
   "repository": {
